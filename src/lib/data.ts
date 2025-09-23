@@ -13,7 +13,7 @@ export const signals: Signal[] = [
     id: '1',
     pair: 'XAU/USD',
     type: 'Buy',
-    timestamp: '2024-07-29T14:30:00Z',
+    timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
     priceAtSignal: 2319.80,
     indicators: { rsi: 28.5, macd: '-0.75 (bullish crossover impending)', movingAverage: { shortTerm: 2325.10, longTerm: 2330.50 } },
     technicalIndicators: 'RSI is at 28.5, indicating it is oversold. MACD is at -0.75, showing potential for a bullish crossover. Short-term MA is below long-term MA.'
@@ -22,7 +22,7 @@ export const signals: Signal[] = [
     id: '2',
     pair: 'XAU/EUR',
     type: 'Sell',
-    timestamp: '2024-07-29T12:15:00Z',
+    timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
     priceAtSignal: 2165.40,
     indicators: { rsi: 72.1, macd: '1.25 (bearish divergence)', movingAverage: { shortTerm: 2160.20, longTerm: 2155.80 } },
     technicalIndicators: 'RSI is at 72.1, indicating it is overbought. MACD is at 1.25 and shows a bearish divergence pattern. Short-term MA is above long-term MA.'
@@ -31,7 +31,7 @@ export const signals: Signal[] = [
     id: '3',
     pair: 'XAU/GBP',
     type: 'Hold',
-    timestamp: '2024-07-29T10:05:00Z',
+    timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(),
     priceAtSignal: 1840.20,
     indicators: { rsi: 55.3, macd: '0.15 (neutral)', movingAverage: { shortTerm: 1840.10, longTerm: 1839.90 } },
     technicalIndicators: 'RSI is at 55.3, which is in the neutral zone. MACD is at 0.15, indicating no strong momentum. Moving averages are tightly packed, suggesting consolidation.'
@@ -40,7 +40,7 @@ export const signals: Signal[] = [
     id: '4',
     pair: 'XAU/JPY',
     type: 'Buy',
-    timestamp: '2024-07-28T22:00:00Z',
+    timestamp: new Date(Date.now() - 18 * 60 * 60 * 1000).toISOString(),
     priceAtSignal: 364100.0,
     indicators: { rsi: 32.0, macd: '-150.0 (converging)', movingAverage: { shortTerm: 364500.0, longTerm: 365000.0 } },
     technicalIndicators: 'RSI is at 32.0, approaching oversold levels. MACD is at -150.0 and the lines are converging, hinting at a potential upward move. A golden cross has not yet occurred.'
@@ -49,7 +49,7 @@ export const signals: Signal[] = [
     id: '5',
     pair: 'XAU/USD',
     type: 'Sell',
-    timestamp: '2024-07-28T18:45:00Z',
+    timestamp: new Date(Date.now() - 22 * 60 * 60 * 1000).toISOString(),
     priceAtSignal: 2345.50,
     indicators: { rsi: 78.2, macd: '2.50 (overextended)', movingAverage: { shortTerm: 2340.10, longTerm: 2335.50 } },
     technicalIndicators: 'RSI is at 78.2, deep in overbought territory, suggesting a reversal is likely. MACD is at 2.50, indicating the trend is overextended.'
