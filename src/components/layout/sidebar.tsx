@@ -17,6 +17,7 @@ import {
   GraduationCap,
   LayoutDashboard,
   LogOut,
+  MessageCircle,
   Settings,
   Signal,
 } from 'lucide-react';
@@ -28,6 +29,7 @@ const navItems = [
   { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
   { href: '/signals', icon: Signal, label: 'Signals' },
   { href: '/predictions', icon: BarChart2, label: 'Predictions' },
+  { href: '/chatbot', icon: MessageCircle, label: 'Chatbot' },
   { href: '/education', icon: GraduationCap, label: 'Education' },
 ];
 

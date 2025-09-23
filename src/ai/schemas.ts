@@ -47,3 +47,20 @@ export const GenerateSignalReasoningOutputSchema = z.object({
 export type GenerateSignalReasoningOutput = z.infer<
   typeof GenerateSignalReasoningOutputSchema
 >;
+
+// Schema for generateChatResponse flow
+const ChatMessageSchema = z.object({
+  user: z.string(),
+  ai: z.string(),
+});
+
+export const GenerateChatResponseInputSchema = z.object({
+  question: z.string().describe('The user\'s current question.'),
+  history: z.array(ChatMessageSchema).describe('The history of the conversation.'),
+});
+export type GenerateChatResponseInput = z.infer<typeof GenerateChatResponseInputSchema>;
+
+export const GenerateChatResponseOutputSchema = z.object({
+  response: z.string().describe('The AI-generated response to the user\'s question.'),
+});
+export type GenerateChatResponseOutput = z.infer<typeof GenerateChatResponseOutputSchema>;
