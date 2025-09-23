@@ -1,11 +1,11 @@
 import type { GoldPair, Signal, EducationContent } from './types';
 
 export const goldPairs: GoldPair[] = [
-  { pair: 'XAU/USD', price: 2320.55, change: -5.43, changePercent: -0.23 },
-  { pair: 'XAU/EUR', price: 2160.78, change: 2.11, changePercent: 0.10 },
-  { pair: 'XAU/GBP', price: 1835.12, change: -10.89, changePercent: -0.59 },
-  { pair: 'XAU/JPY', price: 364589.6, change: 120.4, changePercent: 0.03 },
-  { pair: 'XAU/CHF', price: 2099.45, change: 0.55, changePercent: 0.03 },
+  { pair: 'XAU/USD', price: 2327.88, change: 7.33, changePercent: 0.32 },
+  { pair: 'XAU/EUR', price: 2158.67, change: -2.11, changePercent: -0.10 },
+  { pair: 'XAU/GBP', price: 1842.99, change: 7.87, changePercent: 0.43 },
+  { pair: 'XAU/JPY', price: 364681.2, change: -228.8, changePercent: -0.06 },
+  { pair: 'XAU/CHF', price: 2101.15, change: 1.70, changePercent: 0.08 },
 ];
 
 export const signals: Signal[] = [
@@ -13,72 +13,73 @@ export const signals: Signal[] = [
     id: '1',
     pair: 'XAU/USD',
     type: 'Buy',
-    timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-    priceAtSignal: 2319.80,
-    indicators: { rsi: 28.5, macd: '-0.75 (bullish crossover impending)', movingAverage: { shortTerm: 2325.10, longTerm: 2330.50 } },
-    technicalIndicators: 'RSI is at 28.5, indicating it is oversold. MACD is at -0.75, showing potential for a bullish crossover. Short-term MA is below long-term MA.'
+    timestamp: new Date(Date.now() - 15 * 60 * 1000).toISOString(),
+    priceAtSignal: 2325.40,
+    indicators: { rsi: 31.2, macd: '-0.65 (bullish crossover impending)', movingAverage: { shortTerm: 2326.10, longTerm: 2328.50 } },
+    technicalIndicators: 'RSI is at 31.2, indicating it is approaching oversold. MACD is at -0.65, showing potential for a bullish crossover. Short-term MA is below long-term MA.'
   },
   {
     id: '2',
     pair: 'XAU/EUR',
     type: 'Sell',
-    timestamp: new Date(Date.now() - 4 * 60 * 60 * 1000).toISOString(),
-    priceAtSignal: 2165.40,
-    indicators: { rsi: 72.1, macd: '1.25 (bearish divergence)', movingAverage: { shortTerm: 2160.20, longTerm: 2155.80 } },
-    technicalIndicators: 'RSI is at 72.1, indicating it is overbought. MACD is at 1.25 and shows a bearish divergence pattern. Short-term MA is above long-term MA.'
+    timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
+    priceAtSignal: 2161.80,
+    indicators: { rsi: 68.9, macd: '1.15 (bearish divergence)', movingAverage: { shortTerm: 2160.20, longTerm: 2157.80 } },
+    technicalIndicators: 'RSI is at 68.9, indicating it is nearing overbought. MACD is at 1.15 and shows a bearish divergence pattern. Short-term MA is above long-term MA.'
   },
   {
     id: '3',
     pair: 'XAU/GBP',
     type: 'Hold',
-    timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(),
+    timestamp: new Date(Date.now() - 5 * 60 * 60 * 1000).toISOString(),
     priceAtSignal: 1840.20,
-    indicators: { rsi: 55.3, macd: '0.15 (neutral)', movingAverage: { shortTerm: 1840.10, longTerm: 1839.90 } },
-    technicalIndicators: 'RSI is at 55.3, which is in the neutral zone. MACD is at 0.15, indicating no strong momentum. Moving averages are tightly packed, suggesting consolidation.'
+    indicators: { rsi: 51.7, macd: '0.05 (neutral)', movingAverage: { shortTerm: 1840.10, longTerm: 1840.90 } },
+    technicalIndicators: 'RSI is at 51.7, which is in the neutral zone. MACD is at 0.05, indicating no strong momentum. Moving averages are tight, suggesting consolidation.'
   },
   {
     id: '4',
     pair: 'XAU/JPY',
     type: 'Buy',
-    timestamp: new Date(Date.now() - 18 * 60 * 60 * 1000).toISOString(),
-    priceAtSignal: 364100.0,
-    indicators: { rsi: 32.0, macd: '-150.0 (converging)', movingAverage: { shortTerm: 364500.0, longTerm: 365000.0 } },
-    technicalIndicators: 'RSI is at 32.0, approaching oversold levels. MACD is at -150.0 and the lines are converging, hinting at a potential upward move. A golden cross has not yet occurred.'
+    timestamp: new Date(Date.now() - 10 * 60 * 60 * 1000).toISOString(),
+    priceAtSignal: 364250.0,
+    indicators: { rsi: 34.0, macd: '-140.0 (converging)', movingAverage: { shortTerm: 364500.0, longTerm: 364900.0 } },
+    technicalIndicators: 'RSI is at 34.0, approaching oversold levels. MACD is at -140.0 and the lines are converging, hinting at a potential upward move.'
   },
     {
     id: '5',
     pair: 'XAU/USD',
     type: 'Sell',
-    timestamp: new Date(Date.now() - 22 * 60 * 60 * 1000).toISOString(),
-    priceAtSignal: 2345.50,
-    indicators: { rsi: 78.2, macd: '2.50 (overextended)', movingAverage: { shortTerm: 2340.10, longTerm: 2335.50 } },
-    technicalIndicators: 'RSI is at 78.2, deep in overbought territory, suggesting a reversal is likely. MACD is at 2.50, indicating the trend is overextended.'
+    timestamp: new Date(Date.now() - 16 * 60 * 60 * 1000).toISOString(),
+    priceAtSignal: 2335.50,
+    indicators: { rsi: 75.2, macd: '2.10 (overextended)', movingAverage: { shortTerm: 2334.10, longTerm: 2331.50 } },
+    technicalIndicators: 'RSI is at 75.2, in overbought territory, suggesting a reversal is likely. MACD is at 2.10, indicating the trend may be overextended.'
   },
 ];
 
 export const mainChartData = [
-  { date: '2024-07-01', value: [2325, 2335, 2315, 2320] },
-  { date: '2024-07-02', value: [2320, 2330, 2318, 2328] },
-  { date: '2024-07-03', value: [2328, 2340, 2325, 2338] },
-  { date: '2024-07-04', value: [2338, 2345, 2335, 2342] },
-  { date: '2024-07-05', value: [2342, 2330, 2320, 2325] },
-  { date: '2024-07-08', value: [2325, 2328, 2310, 2312] },
-  { date: '2024-07-09', value: [2312, 2322, 2308, 2318] },
-  { date: '2024-07-10', value: [2318, 2305, 2295, 2300] },
-  { date: '2024-07-11', value: [2300, 2315, 2298, 2310] },
-  { date: '2024-07-12', value: [2310, 2325, 2308, 2320] },
-  { date: '2024-07-15', value: [2320, 2330, 2315, 2328] },
-  { date: '2024-07-16', value: [2328, 2340, 2325, 2335] },
-  { date: '2024-07-17', value: [2335, 2350, 2333, 2348] },
-  { date: '2024-07-18', value: [2348, 2345, 2330, 2332] },
-  { date: '2024-07-19', value: [2332, 2320, 2310, 2315] },
-  { date: '2024-07-22', value: [2315, 2325, 2312, 2322] },
-  { date: '2024-07-23', value: [2322, 2335, 2320, 2330] },
-  { date: '2024-07-24', value: [2330, 2325, 2315, 2320] },
-  { date: '2024-07-25', value: [2320, 2330, 2318, 2325] },
-  { date: '2024-07-26', value: [2325, 2340, 2322, 2338] },
-  { date: '2024-07-29', value: [2338, 2342, 2318, 2320] },
+  { date: '2024-07-01', value: [2325.10, 2335.40, 2315.80, 2320.90] },
+  { date: '2024-07-02', value: [2320.90, 2330.60, 2318.20, 2328.70] },
+  { date: '2024-07-03', value: [2328.70, 2340.10, 2325.30, 2338.40] },
+  { date: '2024-07-04', value: [2338.40, 2345.00, 2335.50, 2342.10] },
+  { date: '2024-07-05', value: [2342.10, 2330.80, 2320.50, 2325.60] },
+  { date: '2024-07-08', value: [2325.60, 2328.90, 2310.20, 2312.30] },
+  { date: '2024-07-09', value: [2312.30, 2322.80, 2308.10, 2318.40] },
+  { date: '2024-07-10', value: [2318.40, 2305.70, 2295.90, 2300.50] },
+  { date: '2024-07-11', value: [2300.50, 2315.60, 2298.80, 2310.70] },
+  { date: '2024-07-12', value: [2310.70, 2325.10, 2308.40, 2320.80] },
+  { date: '2024-07-15', value: [2320.80, 2330.20, 2315.90, 2328.30] },
+  { date: '2024-07-16', value: [2328.30, 2340.50, 2325.70, 2335.60] },
+  { date: '2024-07-17', value: [2335.60, 2350.00, 2333.10, 2348.20] },
+  { date: '2024-07-18', value: [2348.20, 2345.90, 2330.40, 2332.50] },
+  { date: '2024-07-19', value: [2332.50, 2320.30, 2310.80, 2315.90] },
+  { date: '2024-07-22', value: [2315.90, 2325.40, 2312.60, 2322.70] },
+  { date: '2024-07-23', value: [2322.70, 2335.10, 2320.80, 2330.20] },
+  { date: '2024-07-24', value: [2330.20, 2325.60, 2315.40, 2320.50] },
+  { date: '2024-07-25', value: [2320.50, 2330.80, 2318.90, 2325.30] },
+  { date: '2024-07-26', value: [2325.30, 2340.10, 2322.20, 2338.40] },
+  { date: '2024-07-29', value: [2338.40, 2342.90, 2318.70, 2327.88] },
 ];
+
 
 export const educationContent: EducationContent[] = [
     {
