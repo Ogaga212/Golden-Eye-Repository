@@ -4,25 +4,12 @@
  * @fileOverview Generates a price prediction for a given gold pair and timeframe.
  *
  * - generatePrediction - A function that generates a price prediction.
- * - GeneratePredictionInput - The input type for the generatePrediction function.
- * - GeneratePredictionOutput - The return type for the generatePrediction function.
  */
 
 import { ai } from '@/ai/genkit';
-import { z } from 'genkit';
+import { GeneratePredictionInputSchema, GeneratePredictionOutputSchema, type GeneratePredictionInput, type GeneratePredictionOutput } from '@/ai/schemas';
 
-export const GeneratePredictionInputSchema = z.object({
-  goldPair: z.string().describe('The gold pair to predict (e.g., XAU/USD).'),
-  timeframe: z.string().describe('The prediction timeframe (e.g., short-term, medium-term).'),
-});
-export type GeneratePredictionInput = z.infer<typeof GeneratePredictionInputSchema>;
-
-export const GeneratePredictionOutputSchema = z.object({
-  forecastedPrice: z.number().describe('The AI-forecasted price for the gold pair.'),
-  confidence: z.number().describe('The confidence level of the prediction, from 0 to 100.'),
-  analysis: z.string().describe('A detailed analysis explaining the reasoning behind the prediction.'),
-});
-export type GeneratePredictionOutput = z.infer<typeof GeneratePredictionOutputSchema>;
+export { type GeneratePredictionInput, type GeneratePredictionOutput } from '@/ai/schemas';
 
 
 export async function generatePrediction(
