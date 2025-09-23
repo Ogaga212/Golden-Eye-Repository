@@ -109,6 +109,7 @@ export function PredictionForm() {
                         </SelectTrigger>
                       </FormControl>
                       <SelectContent>
+                        <SelectItem value="hourly">Hourly (1-24 Hours)</SelectItem>
                         <SelectItem value="short-term">Short-term (1-3 Days)</SelectItem>
                         <SelectItem value="medium-term">Medium-term (1-2 Weeks)</SelectItem>
                         <SelectItem value="long-term">Long-term (1-3 Months)</SelectItem>
