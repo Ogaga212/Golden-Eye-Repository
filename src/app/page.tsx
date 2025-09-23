@@ -9,7 +9,7 @@ export default function LoginPage() {
           <Logo className="h-16 w-16 text-primary" />
           <div className="text-center">
             <h1 className="font-headline text-3xl font-bold tracking-tight text-foreground">
-              GoldenEye Signals
+              Gold
             </h1>
             <p className="mt-1 text-muted-foreground">
               Welcome back. Sign in to your account.

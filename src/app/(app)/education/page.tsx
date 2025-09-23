@@ -12,7 +12,7 @@ export default function EducationPage() {
     <div className="flex h-full flex-col">
       <PageHeader
         title="Education Center"
-        description="Quick guides to help you get the most out of GoldenEye Signals."
+        description="Quick guides to help you get the most out of the app."
       />
       <div className="flex-1 p-4 md:p-8">
         <Accordion type="single" collapsible className="w-full">

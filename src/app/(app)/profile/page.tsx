@@ -48,7 +48,7 @@ export default function ProfilePage() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" defaultValue="trader@goldeneye.com" />
+                <Input id="email" type="email" defaultValue="trader@gold.com" />
               </div>
             </div>
           </CardContent>

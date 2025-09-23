@@ -1,11 +1,11 @@
 import type { GoldPair, Signal, EducationContent } from './types';
 
 export const goldPairs: GoldPair[] = [
-  { pair: 'XAU/USD', price: 2376.55, change: 12.33, changePercent: 0.52 },
-  { pair: 'XAU/EUR', price: 2215.21, change: -5.41, changePercent: -0.24 },
-  { pair: 'XAU/GBP', price: 1875.99, change: 10.12, changePercent: 0.54 },
-  { pair: 'XAU/JPY', price: 372510.5, change: 850.5, changePercent: 0.23 },
-  { pair: 'XAU/CHF', price: 2130.40, change: -3.15, changePercent: -0.15 },
+  { pair: 'XAU/USD', price: 2320.55, change: -5.12, changePercent: -0.22 },
+  { pair: 'XAU/EUR', price: 2155.80, change: 2.75, changePercent: 0.13 },
+  { pair: 'XAU/GBP', price: 1842.30, change: -8.45, changePercent: -0.46 },
+  { pair: 'XAU/JPY', price: 368540.0, change: 1250.0, changePercent: 0.34 },
+  { pair: 'XAU/CHF', price: 2105.10, change: -1.90, changePercent: -0.09 },
 ];
 
 export const signals: Signal[] = [
@@ -13,46 +13,46 @@ export const signals: Signal[] = [
     id: '1',
     pair: 'XAU/USD',
     type: 'Buy',
-    timestamp: new Date(Date.now() - 25 * 60 * 1000).toISOString(),
-    priceAtSignal: 2375.80,
-    indicators: { rsi: 33.5, macd: '-0.55 (bullish crossover impending)', movingAverage: { shortTerm: 2376.20, longTerm: 2378.10 } },
-    technicalIndicators: 'RSI is at 33.5, indicating it is approaching oversold. MACD is at -0.55, showing potential for a bullish crossover. Short-term MA is below long-term MA.'
+    timestamp: new Date().toISOString(),
+    priceAtSignal: 2321.10,
+    indicators: { rsi: 34.2, macd: '-0.45 (bullish crossover upcoming)', movingAverage: { shortTerm: 2322.50, longTerm: 2324.00 } },
+    technicalIndicators: 'RSI is near oversold at 34.2. MACD histogram is showing bullish divergence.'
   },
   {
     id: '2',
     pair: 'XAU/EUR',
     type: 'Sell',
-    timestamp: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
-    priceAtSignal: 2220.60,
-    indicators: { rsi: 70.2, macd: '1.25 (bearish divergence)', movingAverage: { shortTerm: 2219.80, longTerm: 2217.40 } },
-    technicalIndicators: 'RSI is at 70.2, indicating it is overbought. MACD is at 1.25 and shows a bearish divergence pattern. Short-term MA is above long-term MA.'
+    timestamp: new Date(new Date().getTime() - 2 * 60 * 60 * 1000).toISOString(),
+    priceAtSignal: 2154.50,
+    indicators: { rsi: 68.9, macd: '1.15 (bearish divergence forming)', movingAverage: { shortTerm: 2153.00, longTerm: 2151.20 } },
+    technicalIndicators: 'RSI at 68.9, nearing overbought territory. A bearish divergence is appearing on the MACD.'
   },
   {
     id: '3',
     pair: 'XAU/GBP',
     type: 'Hold',
-    timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000).toISOString(),
-    priceAtSignal: 1868.50,
-    indicators: { rsi: 52.1, macd: '0.15 (neutral)', movingAverage: { shortTerm: 1868.20, longTerm: 1869.00 } },
-    technicalIndicators: 'RSI is at 52.1, which is in the neutral zone. MACD is at 0.15, indicating no strong momentum. Moving averages are tight, suggesting consolidation.'
+    timestamp: new Date(new Date().getTime() - 5 * 60 * 60 * 1000).toISOString(),
+    priceAtSignal: 1850.75,
+    indicators: { rsi: 51.5, macd: '0.05 (neutral)', movingAverage: { shortTerm: 1850.50, longTerm: 1850.90 } },
+    technicalIndicators: 'RSI is neutral at 51.5. MACD is flat, indicating consolidation. Moving averages are tightly coiled.'
   },
   {
     id: '4',
     pair: 'XAU/JPY',
     type: 'Buy',
-    timestamp: new Date(Date.now() - 12 * 60 * 60 * 1000).toISOString(),
-    priceAtSignal: 371980.0,
-    indicators: { rsi: 35.5, macd: '-150.0 (converging)', movingAverage: { shortTerm: 372100.0, longTerm: 372500.0 } },
-    technicalIndicators: 'RSI is at 35.5, approaching oversold levels. MACD is at -150.0 and the lines are converging, hinting at a potential upward move.'
+    timestamp: new Date(new Date().getTime() - 8 * 60 * 60 * 1000).toISOString(),
+    priceAtSignal: 367300.0,
+    indicators: { rsi: 38.0, macd: '-120.0 (momentum turning)', movingAverage: { shortTerm: 367500.0, longTerm: 368000.0 } },
+    technicalIndicators: 'RSI is low at 38.0. MACD is beginning to show signs of a bullish turnaround.'
   },
     {
     id: '5',
     pair: 'XAU/USD',
     type: 'Sell',
-    timestamp: new Date(Date.now() - 18 * 60 * 60 * 1000).toISOString(),
-    priceAtSignal: 2385.20,
-    indicators: { rsi: 76.8, macd: '2.30 (overextended)', movingAverage: { shortTerm: 2384.50, longTerm: 2382.10 } },
-    technicalIndicators: 'RSI is at 76.8, in overbought territory, suggesting a reversal is likely. MACD is at 2.30, indicating the trend may be overextended.'
+    timestamp: new Date(new Date().getTime() - 12 * 60 * 60 * 1000).toISOString(),
+    priceAtSignal: 2328.40,
+    indicators: { rsi: 72.1, macd: '2.10 (overbought)', movingAverage: { shortTerm: 2327.00, longTerm: 2325.00 } },
+    technicalIndicators: 'RSI is high at 72.1, indicating an overbought condition and potential for a pullback.'
   },
 ];
 
@@ -65,8 +65,8 @@ const generateRecentChartData = (days: number, initialPrice: number): { date: st
     const date = new Date(currentDate);
     date.setDate(date.getDate() - i);
 
-    const volatility = 0.01; // 1% volatility
-    const trend = (Math.random() - 0.48) * 0.005; // slight overall trend
+    const volatility = 0.015; 
+    const trend = (Math.random() - 0.49) * 0.006; 
     
     const open = currentPrice;
     const high = open * (1 + Math.random() * volatility);
@@ -86,17 +86,18 @@ const generateRecentChartData = (days: number, initialPrice: number): { date: st
     currentPrice = close * (1 + trend);
   }
   
-  // Ensure the last close price matches the goldPairs data
   const finalDataPoint = data[data.length - 1];
   const priceDiff = goldPairs[0].price - finalDataPoint.value[3];
-  finalDataPoint.value = finalDataPoint.value.map(v => parseFloat((v + priceDiff).toFixed(2))) as [number, number, number, number];
+  data.forEach(d => {
+    d.value = d.value.map(v => parseFloat((v + priceDiff).toFixed(2))) as [number, number, number, number];
+  });
 
 
   return data;
 };
 
 
-export const mainChartData = generateRecentChartData(30, 2350);
+export const mainChartData = generateRecentChartData(30, 2335);
 
 
 export const educationContent: EducationContent[] = [
@@ -117,7 +118,7 @@ export const educationContent: EducationContent[] = [
     },
     {
         id: 'guide-4',
-        title: 'Using the GoldenEye App',
+        title: 'Using the App',
         content: 'The Dashboard provides a real-time overview. The Signals page lists all historical signals for your review. The Prediction page offers AI-driven forecasts. Use the Education section to enhance your trading knowledge. Manage your profile and notification settings in the Profile section.'
     }
 ];

@@ -45,7 +45,7 @@ export function AppSidebar() {
           >
             <Logo className="h-7 w-7 text-primary" />
             <span className="text-lg text-sidebar-foreground group-data-[collapsible=icon]:hidden">
-              GoldenEye
+              Gold
             </span>
           </Link>
         </SidebarHeader>

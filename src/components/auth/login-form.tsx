@@ -62,7 +62,7 @@ export function LoginForm() {
               type="email"
               placeholder="name@example.com"
               required
-              defaultValue="trader@goldeneye.com"
+              defaultValue="trader@gold.com"
             />
           </div>
           <div className="space-y-2">

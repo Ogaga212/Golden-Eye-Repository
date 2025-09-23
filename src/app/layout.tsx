@@ -4,7 +4,7 @@ import { SidebarProvider } from '@/components/ui/sidebar';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'GoldenEye Signals',
+  title: 'Gold',
   description: 'Web App for Predicting Gold Pairs Movement',
 };
 
