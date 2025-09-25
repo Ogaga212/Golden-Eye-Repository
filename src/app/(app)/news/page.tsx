@@ -1,3 +1,4 @@
+
 import { PageHeader } from '@/components/page-header';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { newsArticles } from '@/lib/data';
@@ -28,7 +29,7 @@ export default function NewsPage() {
               </CardHeader>
               <CardContent className="flex-1 space-y-2">
                 <CardTitle className="text-lg leading-snug">
-                  <Link href="#" className="hover:underline">
+                  <Link href={`/news/${article.id}`} className="hover:underline">
                     {article.title}
                   </Link>
                 </CardTitle>
