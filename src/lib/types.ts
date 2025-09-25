@@ -27,3 +27,13 @@ export type EducationContent = {
   title: string;
   content: string;
 };
+
+export type NewsArticle = {
+  id: string;
+  title: string;
+  source: string;
+  timestamp: string;
+  summary: string;
+  imageUrl: string;
+  imageHint: string;
+};

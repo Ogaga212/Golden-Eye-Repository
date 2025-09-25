@@ -1,4 +1,4 @@
-import type { GoldPair, Signal, EducationContent } from './types';
+import type { GoldPair, Signal, EducationContent, NewsArticle } from './types';
 
 export const goldPairs: GoldPair[] = [
   { pair: 'XAU/USD', price: 2320.55, change: -5.12, changePercent: -0.22 },
@@ -121,4 +121,61 @@ export const educationContent: EducationContent[] = [
         title: 'Using the App',
         content: 'The Dashboard provides a real-time overview. The Signals page lists all historical signals for your review. The Prediction page offers AI-driven forecasts. Use the Education section to enhance your trading knowledge. Manage your profile and notification settings in the Profile section.'
     }
+];
+
+export const newsArticles: NewsArticle[] = [
+  {
+    id: 'news-1',
+    title: 'Gold Prices Surge as Inflation Fears Mount',
+    source: 'Financial Times',
+    timestamp: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
+    summary: 'Gold prices have seen a significant increase over the past week as investors seek safe-haven assets amid rising inflation concerns and geopolitical tensions.',
+    imageUrl: 'https://picsum.photos/seed/news1/600/400',
+    imageHint: 'gold bars'
+  },
+  {
+    id: 'news-2',
+    title: 'Central Banks Continue to Build Gold Reserves',
+    source: 'Bloomberg',
+    timestamp: new Date(new Date().setDate(new Date().getDate() - 2)).toISOString(),
+    summary: 'A new report shows that central banks around the world have continued to increase their gold holdings, signaling a long-term bullish outlook for the precious metal.',
+    imageUrl: 'https://picsum.photos/seed/news2/600/400',
+    imageHint: 'bank vault'
+  },
+  {
+    id: 'news-3',
+    title: 'Technical Analysis: Is Gold Overbought?',
+    source: 'Reuters',
+    timestamp: new Date(new Date().setDate(new Date().getDate() - 2)).toISOString(),
+    summary: 'Analysts are divided on whether the recent rally in gold prices is sustainable. Technical indicators suggest that gold may be entering overbought territory.',
+    imageUrl: 'https://picsum.photos/seed/news3/600/400',
+    imageHint: 'stock chart'
+  },
+    {
+    id: 'news-4',
+    title: 'How a Stronger Dollar Could Impact Gold Prices',
+    source: 'Wall Street Journal',
+    timestamp: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),
+    summary: 'The recent strengthening of the US dollar could pose a headwind for gold prices. This article explores the historical relationship between the two assets.',
+    imageUrl: 'https://picsum.photos/seed/news4/600/400',
+    imageHint: 'dollar gold'
+  },
+  {
+    id: 'news-5',
+    title: 'Gold Mining Stocks Rally on Higher Prices',
+    source: 'MarketWatch',
+    timestamp: new Date(new Date().setDate(new Date().getDate() - 4)).toISOString(),
+    summary: 'Shares of major gold mining companies have rallied this week, boosted by the sustained increase in the price of gold and positive earnings reports.',
+    imageUrl: 'https://picsum.photos/seed/news5/600/400',
+    imageHint: 'mining equipment'
+  },
+  {
+    id: 'news-6',
+    title: 'Analysts Predict Gold to Reach $2,500 by Year-End',
+    source: 'The Economist',
+    timestamp: new Date(new Date().setDate(new Date().getDate() - 5)).toISOString(),
+    summary: 'Several prominent financial analysts are forecasting that gold could reach as high as $2,500 per ounce by the end of the year, citing a confluence of macroeconomic factors.',
+    imageUrl: 'https://picsum.photos/seed/news6/600/400',
+    imageHint: 'crystal ball'
+  }
 ];
