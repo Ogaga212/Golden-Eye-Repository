@@ -17,6 +17,10 @@ export const GeneratePredictionOutputSchema = z.object({
   forecastedPrice: z.number().describe('The AI-forecasted price for the gold pair.'),
   confidence: z.number().describe('The confidence level of the prediction, from 0 to 100.'),
   analysis: z.string().describe('A detailed analysis explaining the reasoning behind the prediction.'),
+  supportLevel: z.number().describe('The identified key support level for the pair.'),
+  resistanceLevel: z.number().describe('The identified key resistance level for the pair.'),
+  tradeSetup: z.string().describe('A description of the potential trade setup, including strategy.'),
+  breakoutPoint: z.number().describe('The price point that would signal a significant breakout.'),
 });
 export type GeneratePredictionOutput = z.infer<typeof GeneratePredictionOutputSchema>;
 

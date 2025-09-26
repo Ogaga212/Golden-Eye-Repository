@@ -23,11 +23,18 @@ const prompt = ai.definePrompt({
   name: 'generatePredictionPrompt',
   input: { schema: GeneratePredictionInputSchema },
   output: { schema: GeneratePredictionOutputSchema },
-  prompt: `You are a sophisticated financial AI that specializes in predicting gold market movements.
+  prompt: `You are a sophisticated financial AI that specializes in predicting gold market movements and providing technical analysis.
   
   Analyze the provided gold pair and timeframe. Based on current (simulated) market conditions, technical indicators, and recent price action, generate a price prediction.
   
-  Provide a specific forecasted price, a confidence score for your prediction (0-100), and a concise analysis explaining the key factors influencing your forecast.
+  Provide the following:
+  1.  A specific forecasted price.
+  2.  A confidence score for your prediction (0-100).
+  3.  A concise analysis explaining the key factors influencing your forecast.
+  4.  The key support level.
+  5.  The key resistance level.
+  6.  A description of the current trade setup (e.g., "consolidation before breakout," "testing resistance").
+  7.  The key breakout point price.
 
   Today's Date: ${new Date().toLocaleDateString()}
   Gold Pair: {{{goldPair}}}
@@ -45,7 +52,7 @@ const prompt = ai.definePrompt({
   - XAU/JPY: 372510.5
   - XAU/CHF: 2130.40
 
-  Generate a forecast based on this data. Be creative and generate a realistic-sounding analysis.
+  Generate a forecast and technical analysis based on this data. Be creative and generate a realistic-sounding analysis.
   `,
 });
 

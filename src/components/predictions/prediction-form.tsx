@@ -9,7 +9,7 @@ import {
 } from '@/ai/flows/generate-prediction';
 import type { GeneratePredictionInput, GeneratePredictionOutput } from '@/ai/schemas';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import {
   Select,
   SelectContent,
@@ -19,9 +19,10 @@ import {
 } from '@/components/ui/select';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { goldPairs } from '@/lib/data';
-import { Wand2, Bot, Target, TrendingUp, Zap } from 'lucide-react';
+import { Wand2, Bot, Target, TrendingUp, Zap, ChevronsDown, ChevronsUp, AreaChart } from 'lucide-react';
 import { Skeleton } from '../ui/skeleton';
 import { Alert, AlertTitle, AlertDescription } from '../ui/alert';
+import { Separator } from '../ui/separator';
 
 const formSchema = z.object({
   pair: z.string().min(1, 'Please select a gold pair.'),
@@ -175,22 +176,24 @@ export function PredictionForm() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
-                  <TrendingUp className="h-6 w-6" />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary">
+                    <TrendingUp className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Forecasted Price</p>
+                    <p className="text-xl font-bold">${prediction.forecastedPrice.toFixed(2)}</p>
+                  </div>
                 </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Forecasted Price</p>
-                  <p className="text-xl font-bold">${prediction.forecastedPrice.toFixed(2)}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10 text-green-500">
-                  <Target className="h-6 w-6" />
-                </div>
-                <div>
-                  <p className="text-sm text-muted-foreground">Confidence Score</p>
-                  <p className="text-xl font-bold">{prediction.confidence.toFixed(1)}%</p>
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10 text-green-500">
+                    <Target className="h-6 w-6" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-muted-foreground">Confidence</p>
+                    <p className="text-xl font-bold">{prediction.confidence.toFixed(1)}%</p>
+                  </div>
                 </div>
               </div>
 
@@ -199,6 +202,47 @@ export function PredictionForm() {
                 <p className="text-muted-foreground leading-relaxed">{prediction.analysis}</p>
               </div>
             </CardContent>
+            <CardFooter className="flex-col items-start gap-4 border-t p-6">
+                <h4 className="font-semibold">Chart Analysis</h4>
+                <div className="grid grid-cols-1 gap-4 text-sm sm:grid-cols-2 w-full">
+                    <div className="flex items-center gap-3 rounded-lg border p-3">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-red-500/10 text-red-500">
+                            <ChevronsDown className="h-5 w-5" />
+                        </div>
+                        <div>
+                            <p className="text-muted-foreground">Support Level</p>
+                            <p className="font-bold">${prediction.supportLevel.toFixed(2)}</p>
+                        </div>
+                    </div>
+                    <div className="flex items-center gap-3 rounded-lg border p-3">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-green-500/10 text-green-500">
+                            <ChevronsUp className="h-5 w-5" />
+                        </div>
+                        <div>
+                            <p className="text-muted-foreground">Resistance Level</p>
+                            <p className="font-bold">${prediction.resistanceLevel.toFixed(2)}</p>
+                        </div>
+                    </div>
+                </div>
+                 <div className="w-full space-y-2 rounded-lg border p-3">
+                    <div className="flex items-center gap-3">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-500/10 text-blue-500">
+                            <AreaChart className="h-5 w-5" />
+                        </div>
+                        <p className="font-semibold">Trade Setup</p>
+                    </div>
+                    <p className="text-muted-foreground pl-11">{prediction.tradeSetup}</p>
+                 </div>
+                 <div className="w-full space-y-2 rounded-lg border p-3">
+                    <div className="flex items-center gap-3">
+                        <div className="flex h-8 w-8 items-center justify-center rounded-full bg-yellow-500/10 text-yellow-500">
+                            <Zap className="h-5 w-5" />
+                        </div>
+                        <p className="font-semibold">Breakout Point</p>
+                    </div>
+                    <p className="text-muted-foreground pl-11">A decisive move above <span className="font-bold text-foreground">${prediction.breakoutPoint.toFixed(2)}</span> could signal further upside.</p>
+                 </div>
+            </CardFooter>
           </Card>
         )}
       </div>
