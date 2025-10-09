@@ -1,18 +1,15 @@
-import { AppSidebar } from '@/components/layout/sidebar';
-import { SidebarInset } from '@/components/ui/sidebar';
+import { AppSidebar } from "@/components/layout/sidebar";
+import { SidebarInset } from "@/components/ui/sidebar";
+import { TradingViewDataProvider } from "@/components/dashboard/TradingViewDataProvider";
 
-export default function AppLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <AppSidebar />
       <SidebarInset>
-        <div className="flex h-full flex-col">
-          {children}
-        </div>
+        <TradingViewDataProvider>
+          <div className="flex h-full flex-col">{children}</div>
+        </TradingViewDataProvider>
       </SidebarInset>
     </>
   );

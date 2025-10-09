@@ -1,16 +1,26 @@
-
-import { PageHeader } from '@/components/page-header';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { newsArticles } from '@/lib/data';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import { PageHeader } from "@/components/page-header";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { newsArticles } from "@/lib/data";
+import Image from "next/image";
+import Link from "next/link";
+import { useTradingViewData } from "@/components/dashboard/TradingViewDataProvider";
 
 export default function NewsPage() {
+  const { priceData } = useTradingViewData();
   return (
     <div className="flex h-full flex-col">
       <PageHeader
         title="Gold News"
-        description="Latest news and analysis from the gold market."
+        description={`Latest news and analysis from the gold market. Live XAU/USD: $${
+          priceData.price ?? "Loading..."
+        }`}
       />
       <div className="flex-1 space-y-4 p-4 md:p-8">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -29,7 +39,10 @@ export default function NewsPage() {
               </CardHeader>
               <CardContent className="flex-1 space-y-2">
                 <CardTitle className="text-lg leading-snug">
-                  <Link href={`/news/${article.id}`} className="hover:underline">
+                  <Link
+                    href={`/news/${article.id}`}
+                    className="hover:underline"
+                  >
                     {article.title}
                   </Link>
                 </CardTitle>
